@@ -1,0 +1,118 @@
+﻿@model DataAccessLayer.Entities.PollReport
+@{
+    ViewData["Title"] = "PollReport";
+    Layout = "~/Views/Shared/_MenuLayout.cshtml";
+}
+  <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Anket Rapor</h2>
+          <ol>
+            <li><a href="index.html">Anasayfa</a></li>
+            <li>Anket Rapor</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+   
+
+<section id="skills" class="skills">
+    <div class="container">
+
+        <div class="row skills-content">
+
+            <div class="col-lg-6">
+
+                <div class="progress">
+                    <span class="skill">Ankete Katılan Erkek Sayısı ve Yüzdeliği <i class="val">@Model.ManCount</i></span>
+                    <div class="progress-bar-wrap">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="@Model.ManCount" aria-valuemin="0" aria-valuemax="10000"></div>
+                    </div>
+                </div>
+
+                <div class="progress">
+                    <span class="skill">Ankete Katılan Bayan Sayısı ve Yüzdeliği <i class="val">@Model.WomenCount</i></span>
+                    <div class="progress-bar-wrap">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="@Model.WomenCount" aria-valuemin="0" aria-valuemax="10000"></div>
+                    </div>
+                </div>
+
+                <div class="progress">
+                    <span class="skill">Ankete Katılan Erkek Yaş Ortalaması ve Yüzdeliği <i class="val">@Model.ManAvg</i></span>
+                    <div class="progress-bar-wrap">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="@Model.ManAvg" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <div class="progress">
+                    <span class="skill">Ankete Katılan Bayan Yaş Ortalaması ve Yüzdeliği <i class="val">@Model.WomenAvg</i></span>
+                    <div class="progress-bar-wrap">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="@Model.WomenAvg" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="counts" class="counts">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-3 col-6">
+                <div class="count-box">
+                    <i class="bi bi-emoji-smile"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="@Model.PositiveCount" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Olumlu Cevap Verenlerin Sayısı</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-6">
+                <div class="count-box">
+                    <i class="bi bi-journal-richtext"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="@Model.NegativeCount" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Olumsuz Cevap Verenlerin Sayısı</p>
+                </div>
+            </div>
+
+
+
+            <div class="col-lg-3 col-6 mt-5 mt-lg-0">
+                <div class="count-box">
+                    <i class="bi bi-people"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="@Model.Noİdea" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Fikrim Yok Cevap Verenlerin Sayısı</p>
+                </div>
+            </div>
+
+               <div class="col-lg-3 col-6 mt-5 mt-lg-0">
+                <div class="count-box">
+                    <i class="bi bi-people"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="@Model.UniversityDiplomad" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Üniversite Mezunu Cevap Verenlerin Sayısı</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-6 mt-5 mt-lg-0">
+                <div class="count-box">
+                    <i class="bi bi-people"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="@Model.UniversityNot" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Üniversite Olmayıp Cevap Verenlerin Sayısı</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+

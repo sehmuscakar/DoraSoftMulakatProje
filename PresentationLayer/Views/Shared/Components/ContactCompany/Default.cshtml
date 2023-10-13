@@ -1,0 +1,36 @@
+﻿@model List<DataAccessLayer.Entities.ContactCompany>
+
+
+<div class="row mt-5 justify-content-center">
+
+    <div class="col-lg-10">
+        @foreach (var item in Model)
+        {
+
+
+            <div class="info-wrap">
+                <div class="row">
+                    <div class="col-lg-4 info">
+                        <i class="bi bi-geo-alt"></i>
+                        <h4>Adres:</h4>
+                        <p>@item.Address</p>
+                    </div>
+
+                    <div class="col-lg-4 info mt-4 mt-lg-0">
+                        <i class="bi bi-envelope"></i>
+                        <h4>Mail:</h4>
+                        <p>@item.MailCity</p>
+                    </div>
+
+                    <div class="col-lg-4 info mt-4 mt-lg-0">
+                        <i class="bi bi-phone"></i>
+                        <h4>Telfon:</h4>
+                        <p>@item.Phone</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+</div>
+

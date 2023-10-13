@@ -1,0 +1,23 @@
+﻿@model List<DataAccessLayer.Dtos.AdminDtos.PollListDto>
+<section id="about" class="about">
+    <div class="container">
+        @foreach (var item in Model)
+        {
+        <div class="row">
+
+            <div class="col-lg-6">
+                <img src="~/Img/@item.ImageUrl" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0">
+                    <span>Anketin Aktif Olacağı Son Tairh: <i class="val"> @item.LastTime</i></span>
+                 <span >Anket Numarası: <i class="val"> @item.Id</i></span>
+                <h4>@item.Subject</h4>
+                    <p>
+                        <i> @item.Description</i>
+                
+                </p>
+            </div>
+        </div>
+        }
+    </div>
+</section>

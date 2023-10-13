@@ -1,0 +1,117 @@
+﻿@model DataAccessLayer.Entities.PollUser
+@{
+    ViewData["Title"] = "PollForm";
+    Layout = "~/Views/Shared/_MenuLayout.cshtml";
+}
+
+
+
+<section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>Anket Formu</h2>
+            <ol>
+                <li><a href="/Home/Anasayfa">Anasyfa</a></li>
+                <li>Anket Formu</li>
+            </ol>
+        </div>
+
+    </div>
+</section>
+@await Component.InvokeAsync("Poll")
+<section id="contact" class="contact">
+    <div class="container">
+    </div>
+
+    <div class="container">
+        <div class="row mt-5">
+
+
+
+            <div class="col-lg-8 mt-5 mt-lg-0">
+
+                <form action="PollForm" method="post" role="form" class="php-email-form">
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <input asp-for="PollId" type="text" class="form-control" placeholder="Katılacağınız Anket Numarası Girin Lütfen" required>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <input asp-for="PostMail" type="text" class="form-control" placeholder="Mail Adresinizi Girin Lütfen" required>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <input asp-for="City" type="text" class="form-control" placeholder="Bulunduğunuz Şehiri Girin Lütfen" required>
+                        </div>
+                        <div class="col-md-6 form-group mt-3 mt-md-0">
+                            <input asp-for="Age" type="number" class="form-control" placeholder="Yaşınızı Girin Lütfen" required>
+                        </div>
+                    </div>
+                  
+                    <div class="row">
+                        <strong>Cinsiyetiniz</strong>
+                        <div class="form-group form-check col-md-2">
+                            <label class="form-check-label">
+                                <input class="form-check-input" asp-for="GenderMan" /> @Html.DisplayName("Erkek")
+                            </label>
+                        </div>
+                        <div class="form-group form-check col-md-2">
+                            <label class="form-check-label">
+                                <input class="form-check-input" asp-for="GenderWomen" /> @Html.DisplayName("Kız")
+                            </label>
+                        </div>
+                        <div class="form-group form-check col-md-2">
+                            <label class="form-check-label">
+                                <input class="form-check-input" asp-for="GenderUncertain" /> @Html.DisplayName("Belirtmek İstemiyorum")
+                            </label>
+                        </div>
+                      
+                    </div>
+                    <div class="row">
+                        <strong>Anket Konusu Hakkında Yorumunuz</strong>
+                        <div class="form-group form-check col-md-2">
+                            <label class="form-check-label">
+                                <input class="form-check-input" asp-for="Positive" /> @Html.DisplayName("Katılıyorum")
+                            </label>
+                        </div>
+                        <div class="form-group form-check col-md-2">
+                            <label class="form-check-label">
+                                <input class="form-check-input" asp-for="Negative" /> @Html.DisplayName("Olumsuz")
+                            </label>
+                        </div>
+                        <div class="form-group form-check col-md-2">
+                            <label class="form-check-label">
+                                <input class="form-check-input" asp-for="Uncertain" /> @Html.DisplayName("Fikrim Yok")
+                            </label>
+                        </div>
+                    </div>
+                         <div class="row">
+                        <strong>Eğitim Durumunuz</strong>
+                        <div class="form-group form-check col-md-2">
+                            <label class="form-check-label">
+                                <input class="form-check-input" asp-for="UniversityDiplaed" /> @Html.DisplayName("Universite Mezunuyum")
+                            </label>
+                        </div>
+                        <div class="form-group form-check col-md-2">
+                            <label class="form-check-label">
+                                <input class="form-check-input" asp-for="UniversityNot" /> @Html.DisplayName("Universite Mezunu Değilim")
+                            </label>
+                        </div>
+                    </div>
+                 
+                
+                    <div class="my-3">
+                        <div class="loading">Gönderiliyor</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">Your message has been sent. Thank you!</div>
+                    </div>
+                    <div class="text-center"><button type="submit">Anketi Gönder</button></div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+

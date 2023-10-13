@@ -1,0 +1,42 @@
+﻿@model List<DataAccessLayer.Entities.About>
+
+         <div class="section-title">
+                    <h2>Hakkımızda</h2>
+    <p>İşimizi Saygı ve Sevgi ile Yapıyoruz</p>
+                </div>
+<section id="about" class="about">
+    <div class="container">
+        @foreach (var item in Model)
+        {
+            
+      
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="~/Img/@item.ImageUrl" class="img-fluid" alt="" width="600" height="500">
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0">
+                    <h3>DoraSoft Araştırma ve Danışmanlık</h3>
+                <p>
+                   @item.Description
+                </p>
+                <ul>
+                    <li><i class="bx bx-check-double"></i> @item.SubDescription1</li>
+                    <li><i class="bx bx-check-double"></i> @item.SubDescription2</li>
+                </ul>
+                <div class="row icon-boxes">
+                    <div class="col-md-6">
+                        <i class="bx bx-receipt"></i>
+                        <h4>@item.Title1</h4>
+                        <p>@item.TitleDescription1</p>
+                    </div>
+                    <div class="col-md-6 mt-4 mt-md-0">
+                        <i class="bx bx-cube-alt"></i>
+                        <h4>@item.Title2</h4>
+                        <p>@item.TitleDescription2</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</section><!-- End About Section -->

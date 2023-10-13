@@ -1,0 +1,12 @@
+﻿@model List<DataAccessLayer.Entities.Head> 
+
+<section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    @foreach (var item in Model)
+    {
+        <div class="container text-center text-md-left" data-aos="fade-up">
+            <h1> <span>@item.Title</span></h1>
+            <h2>@item.Description</h2>
+            <a href="/Home/PollForm" class="btn-get-started scrollto">Ankete Katıl</a>
+        </div>
+    }
+    </section><!-- End Hero -->

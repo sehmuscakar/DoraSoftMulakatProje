@@ -1,0 +1,78 @@
+﻿@model DataAccessLayer.Entities.PollReport
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h4>Anket Rapor Güncelleme Paneli</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="@Model.RowOrder" class="form-control" type="hidden" />
+            <div class="form-group">
+                <label asp-for="ManCount" class="control-label"></label>
+                <input asp-for="ManCount" class="form-control" />
+                <span asp-validation-for="ManCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WomenCount" class="control-label"></label>
+                <input asp-for="WomenCount" class="form-control" />
+                <span asp-validation-for="WomenCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WomenAvg" class="control-label"></label>
+                <input asp-for="WomenAvg" class="form-control" />
+                <span asp-validation-for="WomenAvg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ManAvg" class="control-label"></label>
+                <input asp-for="ManAvg" class="form-control" />
+                <span asp-validation-for="ManAvg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PositiveCount" class="control-label"></label>
+                <input asp-for="PositiveCount" class="form-control" />
+                <span asp-validation-for="PositiveCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NegativeCount" class="control-label"></label>
+                <input asp-for="NegativeCount" class="form-control" />
+                <span asp-validation-for="NegativeCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Noİdea" class="control-label"></label>
+                <input asp-for="Noİdea" class="form-control" />
+                <span asp-validation-for="Noİdea" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UniversityDiplomad" class="control-label"></label>
+                <input asp-for="UniversityDiplomad" class="form-control" />
+                <span asp-validation-for="UniversityDiplomad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UniversityNot" class="control-label"></label>
+                <input asp-for="UniversityNot" class="form-control" />
+                <span asp-validation-for="UniversityNot" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group">
+                <label asp-for="AppUserId" class="control-label"></label>
+                <input asp-for="AppUserId" class="form-control" />
+                <span asp-validation-for="AppUserId" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-outline-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<hr />
+<div>
+    <a class="btn btn-secondary" asp-action="Index">Listeye Geri Dön</a>
+</div>

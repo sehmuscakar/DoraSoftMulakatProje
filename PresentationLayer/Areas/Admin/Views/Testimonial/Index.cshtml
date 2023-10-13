@@ -1,0 +1,74 @@
+﻿@model IEnumerable<DataAccessLayer.Dtos.AdminDtos.TestimonialListDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>Referanslar Liste Paneli</h3>
+<br />
+<p>
+    <a class="btn btn-outline-success" asp-action="Create">Yeni Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Açıklama")
+            </th>
+            <th>
+                @Html.DisplayName("Adı ve Soyadı")
+            </th>
+            <th>
+                @Html.DisplayName("Yapılan iş")
+            </th>
+            <th>
+                @Html.DisplayName("Resim")
+            </th>
+          
+             <th>
+                @Html.DisplayName("Son Güncellenme")
+            </th>
+            <th>
+                @Html.DisplayName("Sırası")
+            </th>
+            <th>
+                @Html.DisplayName("Kim Ekledi")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Decsription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullNnme)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Profession)
+            </td>
+            <td>
+                    <img src="~/Img/@Html.DisplayFor(modelItem => item.Image)" alt="" class="form control" height="50" />
+            </td>
+        
+            <td>
+                @Html.DisplayFor(modelItem => item.LastUpdatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RowOrder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedFullName)
+            </td>
+            <td>
+                      <a class="btn btn-outline-danger" asp-action="Edit" asp-route-id="@item.Id">Güncelle</a>
+                            <hr>
+                            <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

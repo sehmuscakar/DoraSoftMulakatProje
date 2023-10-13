@@ -1,0 +1,121 @@
+﻿@model IEnumerable<DataAccessLayer.Dtos.AdminDtos.PollUserListDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>Kullanıcı Anket Sonuçları Liste Paneli</h3>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Kullanıcı Mail Adresi")
+            </th>
+            <th>
+                @Html.DisplayName("Erkek")
+            </th>
+            <th>
+                @Html.DisplayName("Kız")
+            </th>
+            <th>
+                @Html.DisplayName("Belirtmek İstemeyen")
+            </th>
+            <th>
+                @Html.DisplayName("Yaş")
+            </th>
+            <th>
+                @Html.DisplayName("Bulunduğu Şehir")
+            </th>
+            <th>
+                @Html.DisplayName("Olumlu Yorum")
+            </th>
+            <th>
+                @Html.DisplayName("Olumsuz Yorum")
+            </th>
+            <th>
+                @Html.DisplayName("Fikrim Yok Yorum")
+            </th>
+            <th>
+                @Html.DisplayName("Üniversite Mezunu")
+            </th>
+            <th>
+                @Html.DisplayName("Üniversite Mezunu Değil")
+            </th>
+            <th>
+                @Html.DisplayName("Anket No")
+            </th>
+            <th>
+                @Html.DisplayName("Anket Konusu")
+            </th>
+            <th>
+                @Html.DisplayName("Anket Açıklaması")
+            </th>
+            <th>
+                @Html.DisplayName("Ankete Katılma Tarihi")
+            </th>
+            <th>
+                @Html.DisplayName("Sırası")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostMail)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GenderMan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GenderWomen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GenderUncertain)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Positive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Negative)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Uncertain)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UniversityDiplaed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UniversityNot)
+            </td>
+             <td>
+                    @Html.DisplayFor(modelItem => item.PollId)
+             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PollSubject)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PollDescription)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RowOrder)
+            </td>
+            <td>
+                    <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,66 @@
+﻿@model DataAccessLayer.Entities.Poll
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h4>Anket Ekleme Paneli</h4>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input asp-for="@Model.RowOrder" class="form-control" type="hidden" />
+            <div class="form-group">
+                <label asp-for="ImageUrl" class="control-label"></label>
+                <input asp-for="ImageUrl" class="form-control" type="file"/>
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastTime" class="control-label"></label>
+                <input asp-for="LastTime" class="form-control"/>
+                <span asp-validation-for="LastTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subject" class="control-label"></label>
+                <input asp-for="Subject" class="form-control" />
+                <span asp-validation-for="Subject" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="PollCategoryId" class="control-label"></label>
+                <input asp-for="PollCategoryId" class ="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="PollReportId" class="control-label"></label>
+                <input asp-for="PollReportId" class ="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="AppUserId" class="control-label"></label>
+                <input asp-for="AppUserId" class ="form-control" />
+            </div>
+
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Ekle" class="btn btn-outline-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<hr />
+<div>
+    <a class="btn btn-secondary" asp-action="Index">Listeye Geri Dön</a>
+</div>

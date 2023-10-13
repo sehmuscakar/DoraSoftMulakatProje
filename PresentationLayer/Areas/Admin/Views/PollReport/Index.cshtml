@@ -1,0 +1,108 @@
+﻿@model IEnumerable<DataAccessLayer.Dtos.AdminDtos.PollReportListDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>Anket Rapor Liste Paneli</h3>
+<br />
+<p>
+    <a class="btn btn-outline-success" asp-action="Create">Yeni Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+             <th>
+                @Html.DisplayName("Anket Rapor No")
+            </th>
+            <th>
+                @Html.DisplayName("Erkek Sayısı")
+            </th>
+            <th>
+                @Html.DisplayName("Kız Sayısı")
+            </th>
+            <th>
+                @Html.DisplayName("Kızların Yaş Ortalaması")
+            </th>
+            <th>
+                @Html.DisplayName("Erkeklerin Yaş Ortalaması")
+            </th>
+            <th>
+                @Html.DisplayName("Olumlu Yorum Sayısı")
+            </th>
+            <th>
+                @Html.DisplayName("Olumsuz Yorum Sayısı ")
+            </th>
+            <th>
+                @Html.DisplayName("Fikrim Yok Yorum Sayısı")
+            </th>
+            <th>
+                @Html.DisplayName("Üniversite Mezunu Sayısı")
+            </th>
+            <th>
+                @Html.DisplayName("Üniversite Mezunu Olmayanların Sayısı")
+            </th>
+             <th>
+                @Html.DisplayName("Son Güncellenme")
+            </th>
+            <th>
+                @Html.DisplayName("Sırası")
+            </th>
+            <th>
+                @Html.DisplayName("Kim Ekledi")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+             <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ManCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WomenCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WomenAvg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ManAvg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PositiveCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NegativeCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Noİdea)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UniversityDiplomad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UniversityNot)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastUpdatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RowOrder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedFullName)
+            </td>
+            <td>
+                    <a class="btn btn-outline-danger" asp-action="Edit" asp-route-id="@item.Id">Güncelle</a>
+                    <hr>
+                    <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
